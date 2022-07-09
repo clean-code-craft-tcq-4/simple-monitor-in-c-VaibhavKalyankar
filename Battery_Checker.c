@@ -36,13 +36,11 @@ int IsbatteryChargeRateCheck(float ChargeRate)
 }
 int IsbatteryOk(float Temperature, float Soc, float ChargeRate) 
 {
-   return IsbatteryTempCheck(Temperature);
-   return IsbatterySocCheck(Soc);
-   return IsbatteryChargeRateCheck(ChargeRate);
+   return IsbatteryTempCheck(Temperature) && IsbatterySocCheck(Soc) && IsbatteryChargeRateCheck(ChargeRate);
  
  }
 
 int main() {
-  assert(IsbatteryOk(60, 15, 0.8));
+  assert(IsbatteryOk(40, 55, 0.9));
   assert(!IsbatteryOk(30, 85, 0.9));
 }
