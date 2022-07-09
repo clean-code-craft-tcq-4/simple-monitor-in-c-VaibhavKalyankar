@@ -44,5 +44,5 @@ int IsbatteryOk(float Temperature, float Soc, float ChargeRate)
 
 int main() {
   assert(IsbatteryOk(60, 15, 0.8));
-  assert(!IsbatteryOk(50, 85, 0));
+  assert(!IsbatteryOk(30, 85, 0.9));
 }
