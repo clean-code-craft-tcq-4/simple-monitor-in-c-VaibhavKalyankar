@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include <assert.h>
 
 #define Not_Ok 1
 #define Ok 0
