@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <assert.h>
 #include "Battery_Checker.h"
 
 int IsbatteryTempCheck(float Temprature)
