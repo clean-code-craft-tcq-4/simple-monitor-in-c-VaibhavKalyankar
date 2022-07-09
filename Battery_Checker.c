@@ -15,7 +15,7 @@ int IsbatteryTempCheck(float Temprature)
 
 int IsbatterySocCheck(float Soc)
 {
-  if(soc < Min_Soc || soc > Max_Soc) 
+  if(Soc < Min_Soc || Soc > Max_Soc) 
   {
     printf("State of Charge out of range!\n");
     return Not_Ok;
