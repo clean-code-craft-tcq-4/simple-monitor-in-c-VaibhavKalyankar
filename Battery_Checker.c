@@ -38,7 +38,7 @@ int IsbatteryChargeRateCheck(float ChargeRate)
 int IsbatteryOk(float Temperature, float Soc, float ChargeRate) 
 {
    return IsbatteryTempCheck(Temperature);
-   return IsbatterySocCheck(soc);
+   return IsbatterySocCheck(Soc);
    return IsbatteryChargeRateCheck(ChargeRate);
  
  }
