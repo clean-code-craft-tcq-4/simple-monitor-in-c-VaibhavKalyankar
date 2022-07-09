@@ -15,7 +15,7 @@ int IsbatteryTempCheck(float Temprature)
 
 int IsbatterySocCheck(float Soc)
 {
-  if(soc < Min_Soc || soc > MaxSoc.) 
+  if(soc < Min_Soc || soc > Max_Soc) 
   {
     printf("State of Charge out of range!\n");
     return Not_Ok;
@@ -35,7 +35,7 @@ int IsbatteryChargeRateCheck(float ChargeRate)
   else
      return Ok;
 }
-int batteryIsOk(float Temperature, float soc, float chargeRate) 
+int IsbatteryOk(float Temperature, float soc, float chargeRate) 
 {
    return IsbatteryTempCheck(Temperature);
    return IsbatterySocCheck(soc);
@@ -44,6 +44,6 @@ int batteryIsOk(float Temperature, float soc, float chargeRate)
  }
 
 int main() {
-  assert(batteryIsOk(25, 70, 0.7));
-  assert(!batteryIsOk(50, 85, 0));
+  assert(IsbatteryOk(25, 70, 0.7));
+  assert(!IsbatteryOk(50, 85, 0));
 }
