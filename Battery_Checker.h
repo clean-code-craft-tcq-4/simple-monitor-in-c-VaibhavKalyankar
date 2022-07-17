@@ -59,4 +59,8 @@ int IsbatteryChargeRateCheck(float);
 void CheckTempforLowBreach();
 void CheckSocforLowBreach();
 void CheckChargeRateforLowBreach();
+void CheckTempforHighBreach();
+void CheckSocforHighBreach();
+void CheckChargeRateforHighBreach();
+
 
