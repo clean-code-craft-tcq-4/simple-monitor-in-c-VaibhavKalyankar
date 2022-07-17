@@ -15,7 +15,7 @@ typedef enum
 {
   CELCIUS,
   FAHRENHEIT
-}TempratureUnit_ten
+}TempratureUnit_ten;
 
 typedef enum
 {
