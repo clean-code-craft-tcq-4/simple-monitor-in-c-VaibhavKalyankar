@@ -7,12 +7,13 @@ float TempratureUnitConversion(float Temperature,TempratureUnit_ten TempUnit)
    float TempinCelcius = Temperature;
   if(TempUnit == FAHRENHEIT)
   {
-    TempinCelcius = ((Temperature - 32)*5/9;
+    TempinCelcius = ((Temperature - 32)*5/9);
   }
   return TempinCelcius;
 }
 int IsbatteryTempCheck(float Temprature)
 {
+   int ParamStatus = 0;
   if(Temprature >= Min_Temp && Temprature <= Max_Temp) 
   {
       printf("Temperature out of range!\n");
@@ -21,7 +22,7 @@ int IsbatteryTempCheck(float Temprature)
       else
       CheckTempforHighBreach(Temprature);
         
-      return Not_Ok;
+      ParamStatus Not_Ok;
   }
   else
   {
@@ -32,6 +33,7 @@ int IsbatteryTempCheck(float Temprature)
 
 int IsbatterySocCheck(float Soc)
 {
+   int ParamStatus = 0;
   if(Soc > Min_Soc && Soc < Max_Soc) 
   {
     printf("State of Charge out of range!\n");
@@ -52,6 +54,7 @@ int IsbatterySocCheck(float Soc)
 
 int IsbatteryChargeRateCheck(float ChargeRate)
 {
+   int ParamStatus = 0;
    if(ChargeRate >= Min_ChargeRate && ChargeRate <= Max_ChargeRate) 
    {
      printf("Charge Rate out of range!\n");
@@ -79,9 +82,9 @@ int IsbatteryOk(float Temperature, float Soc, float ChargeRate,TempratureUnit_te
  }
 
 int main() {
-  assert(IsbatteryOk(40, 55, 0.9));
-  assert(!IsbatteryOk(30, 85, 0.9));
-  assert(IsbatteryOk(25,70,1));
-  assert(!IsbatteryOk(55,65,0.7));
-  assert(IsbatteryOk(10,30,1.5));
+  assert(IsbatteryOk(40,FAHRENHEIT, 55, 0.9));
+  assert(!IsbatteryOk(30,CELCIUS, 85, 0.9));
+  assert(IsbatteryOk(25,FAHRENHEIT,70,1));
+  assert(!IsbatteryOk(55,CELCIUS,65,0.7));
+  assert(IsbatteryOk(10,FAHRENHEIT,30,1.5));
 }
