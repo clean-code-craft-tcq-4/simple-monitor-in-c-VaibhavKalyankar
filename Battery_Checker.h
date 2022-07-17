@@ -7,7 +7,9 @@
 #define Max_Temp 45
 #define Min_Soc 20
 #define Max_Soc 80
+#deinfe Min_ChargeRate 0
 #define Max_ChargeRate 0.8
+#define Tolerence 0.05
 
 int IsbatteryOk(float,float, float); 
 int IsbatteryTempCheck(float);
