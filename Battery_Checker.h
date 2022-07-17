@@ -24,7 +24,7 @@ typedef enum
   TEMP_NORMAL,
   HIGH_TEMP_WARNING,
   HIGH_TEMP_BREACH
-}BatteryTemp_Status_ten
+}BatteryTemp_Status_ten;
 
 typedef enum
 {
@@ -33,7 +33,7 @@ typedef enum
   SOC_NORMAL,
   HIGH_SOC_WARNING,
   HIGH_SOC_BREACH
-}BatterySoc_Status_ten
+}BatterySoc_Status_ten;
 
 typedef enum
 {
@@ -42,14 +42,14 @@ typedef enum
   ChargeRate_NORMAL,
   HIGH_ChargeRate_WARNING,
   HIGH_ChargeRate_BREACH
-}BatteryChargeRate_Status_ten
+}BatteryChargeRate_Status_ten;
 
 typedef struct
 {
   BatteryTemp_Status_ten TempStatus;
   BatterySoc_Status_ten SocStatus;
   BatteryChargeRate_Status_ten ChargeRateStatus;
-}BatteryStatus_tst
+}BatteryStatus_tst;
   
 
 int IsbatteryOk(float,float, float,TempratureUnit_ten); 
