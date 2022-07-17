@@ -1,15 +1,33 @@
 #include <stdio.h>
 #include "Battery_Checker.h"
 
+
+float TempratureUnitConversion(float Temperature,TempratureUnit_ten TempUnit)
+{
+   float TempinCelcius = Temperature;
+  if(TempUnit == FAHRENHEIT)
+  {
+    TempinCelcius = ((Temperature - 32)*5/9;
+  }
+  return TempinCelcius;
+}
 int IsbatteryTempCheck(float Temprature)
 {
-  if(Temprature > Min_Temp && Temprature < Max_Temp) 
+  if(Temprature >= Min_Temp && Temprature <= Max_Temp) 
   {
       printf("Temperature out of range!\n");
+      if(Temprature < Min_Temp)
+      CheckTempforLowBreach(Temprature);
+      else
+      CheckTempforHighBreach(Temprature);
+        
       return Not_Ok;
   }
   else
-    return Ok;
+  {
+     CheckforWarning(Temprature);
+     ParamStatus Ok;
+  }
 }
 
 int IsbatterySocCheck(float Soc)
@@ -17,26 +35,46 @@ int IsbatterySocCheck(float Soc)
   if(Soc > Min_Soc && Soc < Max_Soc) 
   {
     printf("State of Charge out of range!\n");
-    return Not_Ok;
+    
+     if(Soc < Min_Soc)
+     CheckSocforLowBreach(Soc);
+     else
+     CheckSocforHighBreach(Soc);
+    
+     ParamStatus = Not_Ok;
   }
   else
-    return Ok;
-  
+  {
+     CheckforWarning(Soc);
+     ParamStatus Ok;
+  }
 } 
 
 int IsbatteryChargeRateCheck(float ChargeRate)
 {
-   if(ChargeRate > Max_ChargeRate) 
+   if(ChargeRate >= Min_ChargeRate && ChargeRate <= Max_ChargeRate) 
    {
      printf("Charge Rate out of range!\n");
-      return Not_Ok;
+      
+     if(ChargeRate < Min_ChargeRate)
+     CheckChargeRateforLowBreach(ChargeRate);
+     else
+     CheckChargeRateHighBreachSoc(ChargeRate);
+     
+     ParamStatus = Not_Ok;
    }
   else
-     return Ok;
+  {
+     CheckforWarning(ChargeRate);
+     ParamStatus = Ok;
+  }
 }
-int IsbatteryOk(float Temperature, float Soc, float ChargeRate) 
+                     
+int IsbatteryOk(float Temperature, float Soc, float ChargeRate,TempratureUnit_ten TempUnit) 
 {
-   return IsbatteryTempCheck(Temperature) && IsbatterySocCheck(Soc) && IsbatteryChargeRateCheck(ChargeRate);
+   float ConvertedTemprature;
+   ConvertedTemprated =TempratureUnitConversion(Temperature,TempUnit);
+   return IsbatteryTempCheck(ConvertedTemprature) && IsbatterySocCheck(Soc) && IsbatteryChargeRateCheck(ChargeRate);
  
  }
 
