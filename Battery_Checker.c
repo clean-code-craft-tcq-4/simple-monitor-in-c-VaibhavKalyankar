@@ -25,7 +25,7 @@ int IsbatteryTempCheck(float Temprature)
   }
   else
   {
-     CheckforWarning(Temprature);
+    // CheckforWarning(Temprature);
      ParamStatus Ok;
   }
 }
@@ -45,7 +45,7 @@ int IsbatterySocCheck(float Soc)
   }
   else
   {
-     CheckforWarning(Soc);
+    // CheckforWarning(Soc);
      ParamStatus Ok;
   }
 } 
@@ -65,7 +65,7 @@ int IsbatteryChargeRateCheck(float ChargeRate)
    }
   else
   {
-     CheckforWarning(ChargeRate);
+    // CheckforWarning(ChargeRate);
      ParamStatus = Ok;
   }
 }
