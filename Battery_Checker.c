@@ -22,12 +22,12 @@ int IsbatteryTempCheck(float Temprature)
       else
       CheckTempforHighBreach(Temprature);
         
-      ParamStatus Not_Ok;
+      ParamStatus = Not_Ok;
   }
   else
   {
     // CheckforWarning(Temprature);
-     ParamStatus Ok;
+     ParamStatus = Ok;
   }
 }
 
@@ -48,7 +48,7 @@ int IsbatterySocCheck(float Soc)
   else
   {
     // CheckforWarning(Soc);
-     ParamStatus Ok;
+     ParamStatus = Ok;
   }
 } 
 
@@ -76,7 +76,7 @@ int IsbatteryChargeRateCheck(float ChargeRate)
 int IsbatteryOk(float Temperature, float Soc, float ChargeRate,TempratureUnit_ten TempUnit) 
 {
    float ConvertedTemprature;
-   ConvertedTemprated =TempratureUnitConversion(Temperature,TempUnit);
+   ConvertedTemprature =TempratureUnitConversion(Temperature,TempUnit);
    return IsbatteryTempCheck(ConvertedTemprature) && IsbatterySocCheck(Soc) && IsbatteryChargeRateCheck(ChargeRate);
  
  }
