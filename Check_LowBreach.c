@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "Battery_Checker.h"
 
-extern BatteryStatus_tst BatteryStatus_st
+extern BatteryStatus_tst BatteryStatus_st;
 
 void CheckTempforLowBreach()
 {
