@@ -62,7 +62,7 @@ int IsbatteryChargeRateCheck(float ChargeRate)
      if(ChargeRate < Min_ChargeRate)
      CheckChargeRateforLowBreach();
      else
-     CheckChargeRateHighBreach();
+     CheckChargeRateforHighBreach();
      
      ParamStatus = Not_Ok;
    }
