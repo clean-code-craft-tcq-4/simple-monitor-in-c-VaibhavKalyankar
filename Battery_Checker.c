@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "Battery_Checker.h"
 
+BatteryStatus_tst BatteryStatus_st;
 
 float TempratureUnitConversion(float Temperature,TempratureUnit_ten TempUnit)
 {
