@@ -18,9 +18,9 @@ int IsbatteryTempCheck(float Temprature)
   {
       printf("Temperature out of range!\n");
       if(Temprature < Min_Temp)
-      CheckTempforLowBreach(Temprature);
+      CheckTempforLowBreach();
       else
-      CheckTempforHighBreach(Temprature);
+      CheckTempforHighBreach();
         
       ParamStatus = Not_Ok;
   }
@@ -39,9 +39,9 @@ int IsbatterySocCheck(float Soc)
     printf("State of Charge out of range!\n");
     
      if(Soc < Min_Soc)
-     CheckSocforLowBreach(Soc);
+     CheckSocforLowBreach();
      else
-     CheckSocforHighBreach(Soc);
+     CheckSocforHighBreach();
     
      ParamStatus = Not_Ok;
   }
@@ -60,9 +60,9 @@ int IsbatteryChargeRateCheck(float ChargeRate)
      printf("Charge Rate out of range!\n");
       
      if(ChargeRate < Min_ChargeRate)
-     CheckChargeRateforLowBreach(ChargeRate);
+     CheckChargeRateforLowBreach();
      else
-     CheckChargeRateHighBreachSoc(ChargeRate);
+     CheckChargeRateHighBreachSoc();
      
      ParamStatus = Not_Ok;
    }
