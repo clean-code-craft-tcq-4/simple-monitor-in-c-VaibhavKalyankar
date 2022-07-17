@@ -82,9 +82,9 @@ int IsbatteryOk(float Temperature, float Soc, float ChargeRate,TempratureUnit_te
  }
 
 int main() {
-  assert(IsbatteryOk(40,FAHRENHEIT, 55, 0.9));
-  assert(!IsbatteryOk(30,CELCIUS, 85, 0.9));
-  assert(IsbatteryOk(25,FAHRENHEIT,70,1));
-  assert(!IsbatteryOk(55,CELCIUS,65,0.7));
-  assert(IsbatteryOk(10,FAHRENHEIT,30,1.5));
+  assert(IsbatteryOk(40, 55, 0.9,FAHRENHEIT));
+  assert(!IsbatteryOk(30, 85, 0.9,CELCIUS));
+  assert(IsbatteryOk(25,70,1,FAHRENHEIT));
+  assert(!IsbatteryOk(55,65,0.7,CELCIUS));
+  assert(IsbatteryOk(10,30,1.5,FAHRENHEIT));
 }
